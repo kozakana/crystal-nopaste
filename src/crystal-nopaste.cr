@@ -13,7 +13,8 @@ get "/raw/:id" do |env|
 end
 
 post "/" do |env|
-  env.redirect "/"
+  env.params.body["description"].as(String)
+  #env.redirect "/"
 end
 
 Kemal.run
