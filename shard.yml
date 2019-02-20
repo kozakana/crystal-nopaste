@@ -1,0 +1,20 @@
+name: crystal-nopaste
+version: 0.1.0
+
+authors:
+  - kozakana <mori@pla-cole.co>
+
+targets:
+  crystal-nopaste:
+    main: src/crystal-nopaste.cr
+
+dependencies:
+  kemal:
+    github: sdogruyol/kemal
+    branch: master
+  mime:
+    github: icyleaf/mime.cr
+
+crystal: 0.25.1
+
+license: MIT
