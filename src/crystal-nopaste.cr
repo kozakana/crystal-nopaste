@@ -1,14 +1,19 @@
-#require "./crystal-nopaste/*"
-#
-## TODO: Write documentation for `Crystal::Nopaste`
-#module Crystal::Nopaste
-#  # TODO: Put your code here
-#end
-
 require "kemal"
 
 get "/" do
-  "Hello World!"
+  render "src/views/input.ecr"
+end
+
+get "/:id" do
+  render "src/views/show.ecr"
+end
+
+get "/raw/:id" do |env|
+  env.params.url["id"]
+end
+
+post "/" do |env|
+  env.redirect "/"
 end
 
 Kemal.run
