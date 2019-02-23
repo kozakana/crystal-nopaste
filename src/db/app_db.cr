@@ -3,9 +3,11 @@ require "./sqlite3"
 class AppDB
   @db : Sqlite3 | Nil
 
-  def initialize(type : Symbol, option)
-    if type == :sqlite3
-      @db = Sqlite3.new option[:url]
+  def initialize
+    config_str = File.read("db-config.json")
+    config = JSON.parse(config_str)
+    if config["db"] == "sqlite3"
+      @db = Sqlite3.new config["url"].to_s
     end
   end
 

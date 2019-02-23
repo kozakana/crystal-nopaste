@@ -8,7 +8,7 @@ get "/" do
 end
 
 get "/:id" do |env|
-  db = AppDB.new :sqlite3, {url: URL}
+  db = AppDB.new
 
   paste = db.get_paste env.params.url["id"]
   if paste.is_a?(Nil)
@@ -20,7 +20,7 @@ get "/:id" do |env|
 end
 
 get "/raw/:id" do |env|
-  db = AppDB.new :sqlite3, {url: URL}
+  db = AppDB.new
 
   paste = db.get_paste env.params.url["id"]
   if paste.is_a?(Nil)
@@ -31,7 +31,7 @@ get "/raw/:id" do |env|
 end
 
 post "/" do |env|
-  db = AppDB.new :sqlite3, {url: URL}
+  db = AppDB.new
 
   description = env.params.body["description"].as(String)
   id = db.create_paste description

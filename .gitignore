@@ -3,4 +3,5 @@
 /bin/
 /.shards/
 /data/
+/db-config.json
 *.dwarf
