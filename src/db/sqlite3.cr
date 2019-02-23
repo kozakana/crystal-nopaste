@@ -9,7 +9,7 @@ class Sqlite3
 
   def create_db
     @db.exec "CREATE TABLE paste (id INT PRIMARY KEY, description TEXT NOT NULL, created_at DATETIME)"
-    # TODO: unique, created_at index
+    @db.exec "CREATE INDEX created_at_index ON paste(created_at)"
   end
 
   def get_paste(id : String)
