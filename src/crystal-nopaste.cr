@@ -1,7 +1,10 @@
 require "kemal"
 require "./db/app_db"
 
-URL = "sqlite3://./data/sqlite.db"
+def config
+  config_str = File.read("config.json")
+  JSON.parse(config_str)
+end
 
 get "/" do
   render "src/views/input.ecr"
@@ -10,11 +13,14 @@ end
 get "/:id" do |env|
   db = AppDB.new
 
-  paste = db.get_paste env.params.url["id"]
+  id = env.params.url["id"]
+  paste = db.get_paste id
   if paste.is_a?(Nil)
     env.response.status_code = 404
   else
     description = paste[:description]
+    url = config["base_url"].to_s + "/" + id
+    top_url = config["base_url"].to_s
     render "src/views/show.ecr"
   end
 end
