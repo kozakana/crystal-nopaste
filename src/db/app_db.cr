@@ -5,10 +5,10 @@ class AppDB
   @db : Sqlite3 | Nil
 
   def initialize
-    config_str = File.read("db-config.json")
+    config_str = File.read("config.json")
     config = JSON.parse(config_str)
-    if config["db"] == "sqlite3"
-      @db = Sqlite3.new config["url"].to_s
+    if config["db"]["type"] == "sqlite3"
+      @db = Sqlite3.new config["db"]["url"].to_s
     end
   end
 

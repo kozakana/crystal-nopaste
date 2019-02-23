@@ -3,7 +3,6 @@
 /bin/
 /.shards/
 /data/
-/db-config.json
 /config.json
 /crystal-nopaste
 *.dwarf
