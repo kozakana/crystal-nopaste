@@ -1,4 +1,5 @@
 require "./sqlite3"
+require "json"
 
 class AppDB
   @db : Sqlite3 | Nil
