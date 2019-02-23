@@ -1,0 +1,7 @@
+{
+  "base_url": "http://localhost:3000",
+  "db": {
+    "type": "sqlite3",
+    "url": "sqlite3://./data/sqlite.db"
+  }
+}

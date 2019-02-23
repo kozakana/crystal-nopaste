@@ -7,15 +7,21 @@ nopaste implemented in Crystal
 ### DB settings
 
 ```
-cp db-config.json.sample db-config.json
+cp config.json.sample config.json
 ```
+
+#### app settings
+
+|key|detail|
+|---|---|
+|base_url|Fill in base url|
 
 #### sqlite3 settings
 
 |key|detail|
 |---|---|
-|db|DataBase type(sqlite3)|
-|url|DataBase file path|
+|db.type|DataBase type(sqlite3)|
+|db.url|DataBase file path|
 
 ## Installation
 
