@@ -2,13 +2,35 @@
 
 nopaste implemented in Crystal
 
+## Settings
+
+### DB settings
+
+```
+cp db-config.json.sample db-config.json
+```
+
+#### sqlite3 settings
+
+|key|detail|
+|---|---|
+|db|DataBase type(sqlite3)|
+|url|DataBase file path|
+
 ## Installation
 
-TODO: Write installation instructions here
+### Create DB
+
+```
+crystal src/db/db_migration.cr
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+crystal build --release src/crystal-nopaste.cr
+./src/crystal-nopaste.cr
+```
 
 ## Development
 
